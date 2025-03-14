@@ -21,7 +21,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
+        classpath "net.minecraftforge.gradle:ForgeGradle:2+"
     }
 }
 
@@ -45,7 +45,7 @@ minecraft {
     version = "${mc_version}-${forge_version}"
     runDir = "run"
 	mappings = "${mappings_version}"
-    useDepAts = true
+    //useDepAts = true
 
     replace "@VERSION@", "$mod_version"
     replaceIn "ExNihiloCreatio.java"
@@ -111,8 +111,10 @@ dependencies
     deobfCompile "slimeknights.mantle:Mantle:${mc_major}-${mantle_version}"
     deobfCompile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}"
 
-    compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}_${mc_version}:api"
-    runtime "mcp.mobius.waila:Hwyla:${hwyla_version}_${mc_version}"
+//    compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}_${mc_version}:api"
+//    runtime "mcp.mobius.waila:Hwyla:${hwyla_version}_${mc_version}"
+
+compile files( "libs/Hwyla-1.8.26-B42_1.12.2-deobf.jar" )
 
     compileOnly ("mcjty.theoneprobe:TheOneProbe-${mc_major}:${mc_major}-${top_version}:api") {
         exclude group: "cofh", module: "RedstoneFlux"
